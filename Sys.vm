@@ -33,7 +33,7 @@ goto END
 label END
 return
 
-function Sys.range 21
+function Sys.range 2
 push argument 0
 push constant 0
 add
