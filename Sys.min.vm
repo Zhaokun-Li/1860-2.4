@@ -1,0 +1,16 @@
+function Sys.min 0
+    push argument 0
+    push argument 1
+    lt
+    if-goto MIN
+    gt
+    if-goto MAX
+    label MIN
+    push argument 0
+    goto END
+    label MAX
+    push argument 0
+    goto END
+    
+    label END
+    return
