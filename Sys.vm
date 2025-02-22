@@ -75,7 +75,7 @@ add
 pop local 2
 goto LOOP_START
 label LOOP_END
-push local 1
 push local 0
+push local 1
 sub
 return
