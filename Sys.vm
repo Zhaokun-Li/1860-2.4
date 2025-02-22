@@ -3,13 +3,13 @@ function Sys.min 0
 push argument 0
 push argument 1
 lt
-if-goto MIN
+if-goto MIN_MIN
 gt
-if-goto MAX
-label MIN
+if-goto MIN_MAX
+label MIN_MIN
 push argument 0
 goto END
-label MAX
+label MIN_MAX
 push argument 1
 goto END
     
@@ -20,13 +20,13 @@ function Sys.max 0
 push argument 0
 push argument 1
 lt
-if-goto MIN
+if-goto MAX_MIN
 gt
-if-goto MAX
-label MIN
+if-goto MAX_MAX
+label MAX_MIN
 push argument 1
 goto END
-label MAX
+label MAX_MAX
 push argument 0
 goto END
     
