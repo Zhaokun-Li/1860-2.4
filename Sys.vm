@@ -35,3 +35,50 @@ goto END
     
 label END
 return
+
+function Sys.range 4
+push argument 0
+push constant 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push argument 0
+push constant 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push constant 1
+pop local 2
+label LOOP_START
+push local 2
+push argument 1
+lt
+if-goto LOOP_BODY
+goto LOOP_END
+label LOOP_BODY
+push argument 0
+push local 2
+add
+pop pointer 1
+push that 0
+pop local 3
+push local 0
+push local 3
+call Sys.min 2
+pop local 0
+push local 1
+push local 3
+call Sys.max 2
+pop local 1
+push local 2
+push constant 1
+add
+pop local 2
+goto LOOP_START
+label LOOP_END
+push local 1
+push local 0
+sub
+return
