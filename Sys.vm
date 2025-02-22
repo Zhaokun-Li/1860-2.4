@@ -33,20 +33,14 @@ goto END
 label END
 return
 
-function Sys.range 2
+function Sys.range 4
 push argument 0
-push constant 0
-add
 pop pointer 1
 push that 0
 pop local 0
-push argument 0
-push constant 0
-add
-pop pointer 1
-push that 0
+push local 0
 pop local 1
-push constant 0
+push constant 1
 pop local 2
 label LOOP_START
 push local 2
