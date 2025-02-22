@@ -11,9 +11,9 @@ push argument 0
 goto END
 label MIN_MAX
 push argument 1
-goto END
+goto MIN_END
     
-label END
+label MIN_END
 return
 
 function Sys.max 0
@@ -28,9 +28,9 @@ push argument 1
 goto END
 label MAX_MAX
 push argument 0
-goto END
+goto MAX_END
     
-label END
+label MAX_END
 return
 
 function Sys.range 4
