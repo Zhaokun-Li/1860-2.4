@@ -1,3 +1,7 @@
+function Sys.init 0
+    push constant 4
+    push constant 2
+    call Sys.min 2
 function Sys.min 0
     push argument 0
     push argument 1
