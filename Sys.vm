@@ -1,37 +1,28 @@
-
 function Sys.min 0
 push argument 0
 push argument 1
 lt
-if-goto MIN_MIN
-gt
-if-goto MIN_MAX
-label MIN_MIN
-push argument 0
-goto END
-label MIN_MAX
+if-goto Sys.min.IF_TRUE
 push argument 1
-goto MIN_END
-    
-label MIN_END
+goto Sys.min.END
+label Sys.min.IF_TRUE
+push argument 0
+label Sys.min.END
 return
+
 
 function Sys.max 0
 push argument 0
 push argument 1
-lt
-if-goto MAX_MIN
 gt
-if-goto MAX_MAX
-label MAX_MIN
+if-goto Sys.max.IF_TRUE
 push argument 1
-goto END
-label MAX_MAX
+goto Sys.max.END
+label Sys.max.IF_TRUE
 push argument 0
-goto MAX_END
-    
-label MAX_END
+label Sys.max.END
 return
+
 
 function Sys.range 4
 push argument 0
