@@ -35,12 +35,12 @@ function Sys.min 0
 function Sys.max 0
     push argument 0
     push argument 1
-    gt
+    lt
     if-goto Sys.max.IF_TRUE
-    push argument 1
+    push argument 0
     goto Sys.max.END
     label Sys.max.IF_TRUE
-    push argument 0
+    push argument 1
     label Sys.max.END
     return
 
