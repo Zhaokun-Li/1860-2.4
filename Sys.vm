@@ -80,7 +80,7 @@ push pointer 0
 add
 pop pointer 0
 label while
-argument 1
+push argument 1
 push constant 0
 eq
 if-goto END
