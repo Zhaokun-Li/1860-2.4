@@ -12,12 +12,12 @@ function Sys.min 0
     push argument 0
     push argument 1
     lt
-    if-goto Sys.min.IF_TRUE
+    if-goto Sys_min_IF_TRUE
     push argument 1
-    goto Sys.min.END
-    label Sys.min.IF_TRUE
+    goto Sys_min_END
+    label Sys_min_IF_TRUE
     push argument 0
-    label Sys.min.END
+    label Sys_min_END
     return
 
 
@@ -36,12 +36,12 @@ function Sys.max 0
     push argument 0
     push argument 1
     lt
-    if-goto Sys.max.IF_TRUE
+    if-goto Sys_max_IF_TRUE
     push argument 0
-    goto Sys.max.END
-    label Sys.max.IF_TRUE
+    goto Sys_max_END
+    label Sys_max_IF_TRUE
     push argument 1
-    label Sys.max.END
+    label Sys_max_END
     return
 
 
