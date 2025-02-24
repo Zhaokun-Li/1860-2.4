@@ -9,18 +9,18 @@
 // Push to the stack the minimum of two arguments.
 //
 function Sys.min 2
-    push argument 0
-    push argument 1
-    lt
-    if-goto LESS
-    goto GREATER
-    label LESS
-    push argument 0
-    goto END
-    label GREATER
-    push argument 1
-    label END
-    return
+push argument 0
+push argument 1
+lt
+if-goto LESS
+goto GREATER
+label LESS
+push argument 0
+goto END
+label GREATER
+push argument 1
+label END
+return
 
 
 
@@ -35,18 +35,18 @@ function Sys.min 2
 // Push to the stack the minimum of two arguments.
 //
 function Sys.max 2
-    push argument 0
-    push argument 1
-    gt
-    if-goto GREATER
-    goto LESS
-    label GREATER
-    push argument 0
-    goto END
-    label LESS
-    push argument 1
-    label END
-    return  
+push argument 0
+push argument 1
+gt
+if-goto GREATER
+goto LESS
+label GREATER
+push argument 0
+goto END
+label LESS
+push argument 1
+label END
+return  
 
 
 
@@ -65,49 +65,47 @@ function Sys.max 2
 // result is at the top of the stack.
 //
 function Sys.range 2
-    push argument 0
-    pop pointer 0
-    push this 0
-    pop local 0
-    push this 0
-    pop local 1
-
-    push argument 1
-    push constant 1
-    sub
-    pop argument 1
-    push constant 1
-    push pointer 0
-    add
-    pop pointer 0
-    label while
-    push argument 1
-    push constant 0
-    eq
-    if-goto END
-    push this 0
-    push local 0
-    call Sys.max 2
-    pop local 0
-
-    push this 0
-    push local 1
-    call Sys.min 2
-    pop local 1
-    push constant 1
-    push pointer 0
-    add
-    pop pointer 0
-    push argument 1
-    push constant 1
-    sub
-    pop argument 1
-    goto while
-    label END
-    push local 0
-    push local 1
-    sub
-    return
+push argument 0
+pop pointer 0
+push this 0
+pop local 0
+push this 0
+pop local 1
+push argument 1
+push constant 1
+sub
+pop argument 1
+push constant 1
+push pointer 0
+add
+pop pointer 0
+label while
+argument 1
+push constant 0
+eq
+if-goto END
+push this 0
+push local 0
+call Sys.max 2
+pop local 0
+push this 0
+push local 1
+call Sys.min 2
+pop local 1
+push constant 1
+push pointer 0
+add
+pop pointer 0
+push argument 1
+push constant 1
+sub
+pop argument 1
+goto while
+label END
+push local 0
+push local 1
+sub
+return
 
 
 // The emulator will start executing from here. You can modify
