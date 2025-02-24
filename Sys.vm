@@ -12,12 +12,14 @@ function Sys.min 2
     push argument 0
     push argument 1
     lt
-    if-goto Sys_min_IF_TRUE
-    push argument 1
-    goto Sys_min_END
-    label Sys_min_IF_TRUE
+    if-goto LESS
+    goto GREATER
+    label LESS
     push argument 0
-    label Sys_min_END
+    goto END
+    label GREATER
+    push argument 1
+    label END
     return
 
 
@@ -35,14 +37,16 @@ function Sys.min 2
 function Sys.max 2
     push argument 0
     push argument 1
-    lt
-    if-goto Sys_max_IF_TRUE
+    gt
+    if-goto GREATER
+    goto LESS
+    label GREATER
     push argument 0
-    goto Sys_max_END
-    label Sys_max_IF_TRUE
+    goto END
+    label LESS
     push argument 1
-    label Sys_max_END
-    return
+    label END
+    return  
 
 
 
