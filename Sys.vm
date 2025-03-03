@@ -1,16 +1,10 @@
 function Sys.xor 3
-pop local 0
-pop local 1
-push local 0
-push local 1
+push argument 0
+push argument 1
 or
-pop local 2
-push local 0
-push local 1
+push argument 0
+push argument 1
 and
-pop local 3
-push local 2
-push local 3
 not
 and
 return
