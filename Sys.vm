@@ -1,4 +1,4 @@
-function Sys.xor 0
+function Sys.xor 3
 pop local 0
 pop local 1
 push local 0
@@ -14,3 +14,8 @@ push local 3
 not
 and
 return
+
+function Sys.init 0
+push constant 12 \\ 00000000 00001100
+push constant 6 \\ 00000000 00000110
+call Sys.xor 2 \\ 00000000 00001010 is at the top of the stack
