@@ -9,7 +9,33 @@ not
 and
 return
 
-function Sys.init 0
-push constant 12 \\ 00000000 00001100
-push constant 6 \\ 00000000 00000110
-call Sys.xor 2 \\ 00000000 00001010 is at the top of the stack
+function Sys.shiftLeft 0
+pop local 0
+pop local 1
+
+push constant 0
+pop local 2
+
+label LOOP
+push local 2
+push local 1
+lt
+if-goto CONTINUE
+goto END
+
+label CONTINUE
+push local 0
+push constant 2
+mul
+pop local 0
+
+push local 2
+push constant 1
+add
+pop local 2
+
+goto LOOP
+
+label END
+push local 0
+return
